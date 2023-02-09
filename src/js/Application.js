@@ -11,19 +11,18 @@ export default class Application extends EventEmitter {
     super();
     this.init();
     this.emit(Application.events.READY);
-
   }
-  
+
   init() {
-    const article = document.querySelector('.article')
+    const article = document.querySelector(".article");
     article.addEventListener("click", () => {
       anime({
-        targets: '.article',
+        targets: ".article",
         translateX: 250,
-        direction: 'alternate',
+        direction: "alternate",
         loop: true,
-        easing: 'linear'
-      })
-    })
+        easing: "spring(1, 80, 10, 0)",
+      });
+    });
   }
 }
